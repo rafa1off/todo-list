@@ -1,1 +1,20 @@
-<h1>hello</h1>
+<h1>Lista de afazeres</h1>
+
+<a href="{% url 'create' %}">Criar</a>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.id %}">Detalhes</a></td>
+        <td><a href="{% url 'edit' task.id %}">Editar</a></td>
+        <td><a href="{% url 'delete' task.id %}">Excluir</a></td>
+    </tr>
+    {% empty %}
+        <h3>Não há itens na lista!</h3>
+    {% endfor %}
+</table>

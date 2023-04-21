@@ -1,0 +1,7 @@
+<a href="{% url 'index' %}">Lista</a>
+
+<form method="POST">
+    {%csrf_token%}
+    <p>Tem certeza que deseja excluir a tarefa "{{task}}"?</p>
+    <input type="submit" value="Excluir">
+</form>

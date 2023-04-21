@@ -1,0 +1,8 @@
+<a href="{% url 'index' %}">Lista</a>
+<h3>Criar tarefa</h3>
+
+<form action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Criar">
+</form>
